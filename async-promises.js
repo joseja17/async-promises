@@ -6,8 +6,10 @@
 //whereAreMyKeys. The promise should resolve after 1
 //second (Hint: use setTimeout), with the value of "On the table!"
 
-//Code here
-
+var whereAreMyKeys = new Promise(function(resolve) {
+    setTimeout(resolve, 1, 'On the table!');
+  });
+  
 
 ///////////////////Problem 2//////////////////
 
@@ -21,7 +23,13 @@
 
 function lostCityFinder(lostCity){
 
-    //CODE HERE
+    var findAtlantis = new Promise(function(resolve, reject){
+        if (lostCity.location == 'under the sea'){
+            resolve(lostCity.name)
+        }else {
+            reject("Can't find Atlantis!")
+        }
+    })
 
 
     //DO NOT TOUCH THIS LINE
@@ -35,7 +43,9 @@ function lostCityFinder(lostCity){
 
 var night = ""
 
-//CODE HERE
+goodNight.then((resp)=>{
+    night = resp
+} )
 
 
 
@@ -48,7 +58,13 @@ var night = ""
 var day = ""
 var err = ""
 
-//CODE HERE
+goodDay.then((resp)=>{
+    day = resp
+})
+
+goodDay.catch((resp)=>{
+    err = resp
+})
 
 
 
